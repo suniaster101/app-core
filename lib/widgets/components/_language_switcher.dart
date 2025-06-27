@@ -1,7 +1,6 @@
 // 🐦 Flutter imports:
 
 import 'package:appcore/core.dart';
-import 'package:appcore/external.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +18,8 @@ class LanguageSwitcher extends StatefulWidget {
 }
 
 class _LanguageSwitcherState extends State<LanguageSwitcher> {
-  late String _lang = (context.locale.languageCode).toUpperCase();
+  String _lang = "EN";
+  // late String _lang = (context.locale.languageCode).toUpperCase();
 
   final _langMap = {
     "EN": "assets/translations/us.svg",
@@ -80,12 +80,12 @@ class _LanguageSwitcherState extends State<LanguageSwitcher> {
         onChanged: (String? value) {
           setState(() {
             _lang = value ?? _lang;
-            var locale = const Locale('en', 'US');
-            if (value == "ID") {
-              locale = const Locale('id', 'ID');
-            }
-            Session.i.setLanguage(languageCode: _lang.toLowerCase());
-            context.setLocale(locale);
+            // var locale = const Locale('en', 'US');
+            // if (value == "ID") {
+            //   locale = const Locale('id', 'ID');
+            // }
+            // Session.i.setLanguage(languageCode: _lang.toLowerCase());
+            // context.setLocale(locale);
           });
         },
         buttonStyleData: const ButtonStyleData(
